@@ -3,24 +3,23 @@ import org.bukkit.Bukkit;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class BossBarListener implements Listener {
-
+    @EventHandler
     public void onJoin(PlayerJoinEvent e){
         for(Integer index : BossBarHandler.color.keySet()) {
             if(getColor(BossBarHandler.color.get(index)) == null) {
                 BossBar bossBar = Bukkit.createBossBar("§cThis color is not available!", BarColor.WHITE, BarStyle.SOLID);
                 bossBar.addPlayer(e.getPlayer());
             }else {
-
                 if(getBarStyle(BossBarHandler.style.get(index)) == null) {
                     BossBar bossBar = Bukkit.createBossBar("§cThis BarType is not available!", BarColor.WHITE, BarStyle.SOLID);
                     bossBar.addPlayer(e.getPlayer());
                     return;
                 }
-
                 BossBar bossBar = Bukkit.createBossBar(BossBarHandler.text.get(index), getColor(BossBarHandler.color.get(index)), getBarStyle(BossBarHandler.style.get(index)));
                 bossBar.addPlayer(e.getPlayer());
             }

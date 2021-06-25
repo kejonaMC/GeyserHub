@@ -22,9 +22,6 @@ public class BossBarHandler {
             text.put(i, Objects.requireNonNull(config.getString("BossBar.Bar" + i + ".Text")).replace("&", "§"));
             style.put(i, config.getString("BossBar.Bar" + i + ".Type"));
             i++;
-            System.out.println(style);
-            System.out.println(text);
-            System.out.println(color);
         }
     }
 }

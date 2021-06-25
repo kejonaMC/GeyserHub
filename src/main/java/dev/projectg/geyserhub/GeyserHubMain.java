@@ -69,10 +69,10 @@ public class GeyserHubMain extends JavaPlugin {
         // Listener for world settings
         Bukkit.getServer().getPluginManager().registerEvents(new WorldSettings(), this);
 
-        // Listener for bossbar settings
-        if (getConfig().getBoolean("BossBar.Enable", false)) {
-            new BossBarHandler().bossBarSetup();
+        // Listener for bossbar
+        if (getConfig().getBoolean("BossBar.Enable",false)) {
             Bukkit.getServer().getPluginManager().registerEvents(new BossBarListener(), this);
+            new BossBarHandler().bossBarSetup();
         }
 
         // load the scoreboard if enabled
