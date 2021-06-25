@@ -18,7 +18,6 @@ import java.util.Objects;
 
 public class BedrockFormRegistry implements Reloadable {
 
-    private static BedrockFormRegistry INSTANCE;
     public static final String DEFAULT = "default";
 
     /**
@@ -27,14 +26,9 @@ public class BedrockFormRegistry implements Reloadable {
     private boolean isEnabled;
     private final Map<String, BedrockForm> enabledForms = new HashMap<>();
 
-    public static BedrockFormRegistry getInstance() {
-        return INSTANCE;
-    }
-
     public BedrockFormRegistry() {
         ReloadableRegistry.registerReloadable(this);
         isEnabled = load();
-        INSTANCE = this;
     }
 
     private boolean load() {
@@ -63,7 +57,7 @@ public class BedrockFormRegistry implements Reloadable {
                             ConfigurationSection formInfo = forms.getConfigurationSection(entry);
                             Objects.requireNonNull(formInfo);
                             BedrockForm form = new BedrockForm(formInfo);
-                            if (form.isEnabled()) {
+                            if (form.isEnabled) {
                                 enabledForms.put(entry, form);
                                 noSuccess = false;
                             } else {
