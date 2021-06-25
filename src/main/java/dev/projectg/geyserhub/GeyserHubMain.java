@@ -2,6 +2,8 @@ package dev.projectg.geyserhub;
 
 import dev.projectg.geyserhub.command.GeyserHubCommand;
 import dev.projectg.geyserhub.config.ConfigManager;
+import dev.projectg.geyserhub.module.bossBar.BossBarHandler;
+import dev.projectg.geyserhub.module.bossBar.BossBarListener;
 import dev.projectg.geyserhub.module.menu.CommonMenuListeners;
 import dev.projectg.geyserhub.module.menu.java.JavaMenuListeners;
 import dev.projectg.geyserhub.module.menu.bedrock.BedrockFormRegistry;
@@ -66,6 +68,12 @@ public class GeyserHubMain extends JavaPlugin {
 
         // Listener for world settings
         Bukkit.getServer().getPluginManager().registerEvents(new WorldSettings(), this);
+
+        // Listener for bossbar settings
+        if (getConfig().getBoolean("BossBar.Enable", false)) {
+            new BossBarHandler().bossBarSetup();
+            Bukkit.getServer().getPluginManager().registerEvents(new BossBarListener(), this);
+        }
 
         // load the scoreboard if enabled
         if (getConfig().getBoolean("Scoreboard.Enable", false)) {
