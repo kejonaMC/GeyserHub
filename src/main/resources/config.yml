@@ -53,6 +53,15 @@ Broadcasts:
       - '&b -*-*- Made by ProjectG -*-*-'
       - '&6*----------------*----------------* '
 
+Disable-Commands:
+  Enable: true
+  Commands:
+    - "pl"
+    - "plugin"
+    - "version"
+    - "ver"
+    - "about"
+
 World-settings:
   disable-hunger-loss: true
   disable-fall-damage: true

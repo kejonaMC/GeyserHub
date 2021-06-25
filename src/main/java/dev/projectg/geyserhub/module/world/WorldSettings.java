@@ -2,7 +2,9 @@ package dev.projectg.geyserhub.module.world;
 
 import dev.projectg.geyserhub.GeyserHubMain;
 import dev.projectg.geyserhub.config.ConfigId;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,8 +15,12 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.List;
+import java.util.Objects;
 
 public class WorldSettings implements Listener {
 
@@ -100,6 +106,7 @@ public class WorldSettings implements Listener {
         event.setCancelled(true);
 
     }
+
     @EventHandler(priority = EventPriority.HIGH)
     public void onBlockBreak(BlockBreakEvent event) {
         FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
@@ -125,10 +132,27 @@ public class WorldSettings implements Listener {
         if (item.getType() == Material.AIR)
             return;
         Player player = event.getPlayer();
-         if (player.hasPermission("geyserhub.blockplace")) {
-             return;
-         }
+        if (player.hasPermission("geyserhub.blockplace")) {
+            return;
+        }
         player.sendMessage("You can't place blocks here!");
         event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onCommandUse(PlayerCommandPreprocessEvent event) {
+        FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
+        if (!config.getBoolean("Disable-Commands.Enable", false)) {
+            return;
+        }
+        Player player = event.getPlayer();
+        List<String> commands = config.getStringList("Disable-Commands.Commands");
+        commands.forEach(all -> {
+            if (event.getMessage().toLowerCase().equalsIgnoreCase("/" + all.toLowerCase())) {
+                event.setCancelled(true);
+                player.sendMessage(ChatColor.DARK_RED + "That command has been disabled!");
+
+            }
+        });
     }
 }
