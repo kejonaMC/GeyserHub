@@ -1,5 +1,6 @@
 package dev.projectg.geyserhub.module.bossBar;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
@@ -12,11 +13,11 @@ public class BossBarListener implements Listener {
     public void onJoin(PlayerJoinEvent e){
         for(Integer index : BossBarHandler.color.keySet()) {
             if(getColor(BossBarHandler.color.get(index)) == null) {
-                BossBar bossBar = Bukkit.createBossBar("§cThis color is not available!", BarColor.WHITE, BarStyle.SOLID);
+                BossBar bossBar = Bukkit.createBossBar(ChatColor.DARK_RED + "This color is not available!", BarColor.WHITE, BarStyle.SOLID);
                 bossBar.addPlayer(e.getPlayer());
             }else {
                 if(getBarStyle(BossBarHandler.style.get(index)) == null) {
-                    BossBar bossBar = Bukkit.createBossBar("§cThis BarType is not available!", BarColor.WHITE, BarStyle.SOLID);
+                    BossBar bossBar = Bukkit.createBossBar(ChatColor.DARK_RED + "This BarType is not available!", BarColor.WHITE, BarStyle.SOLID);
                     bossBar.addPlayer(e.getPlayer());
                     return;
                 }
