@@ -18,11 +18,11 @@ Join-Teleporter:
 BossBar:
   Enable: true
   Bar1:
-    Text: "Welcome on GeyserHub. If you like this plugin please consider donation as this would help us alot!"
+    Text: "Welcome %player_name% on GeyserHub!"
     Color: green
     Type: solid
   #Bar2:
-    #Text: "Welcome on GeyserHub. If you like this plugin please consider donation as this would help us alot!"
+    #Text: "If you like this plugin please consider donation as this would help us alot!"
     #Color: blue
     #Type: solid
 

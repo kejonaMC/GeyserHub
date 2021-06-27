@@ -13,11 +13,10 @@ public class BossBarHandler {
     public static HashMap<Integer, String> text = new HashMap<>();
     public static HashMap<Integer, String> style = new HashMap<>();
 
-    public void bossBarSetup(){
+    public void bossBarSetup() {
         FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
-
         int i = 1;
-        while(config.getString("BossBar.Bar" + i + ".Text") != null) {
+        while (config.getString("BossBar.Bar" + i + ".Text") != null) {
             color.put(i, Objects.requireNonNull(config.getString("BossBar.Bar" + i + ".Color")).replace("&", "§"));
             text.put(i, Objects.requireNonNull(config.getString("BossBar.Bar" + i + ".Text")).replace("&", "§"));
             style.put(i, config.getString("BossBar.Bar" + i + ".Type"));

@@ -1,4 +1,5 @@
 package dev.projectg.geyserhub.module.bossBar;
+import dev.projectg.geyserhub.utils.PlaceholderUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
@@ -21,7 +22,7 @@ public class BossBarListener implements Listener {
                     bossBar.addPlayer(e.getPlayer());
                     return;
                 }
-                BossBar bossBar = Bukkit.createBossBar(BossBarHandler.text.get(index), getColor(BossBarHandler.color.get(index)), getBarStyle(BossBarHandler.style.get(index)));
+                BossBar bossBar = Bukkit.createBossBar(PlaceholderUtils.setPlaceholders(e.getPlayer(),BossBarHandler.text.get(index)), getColor(BossBarHandler.color.get(index)), getBarStyle(BossBarHandler.style.get(index)));
                 bossBar.addPlayer(e.getPlayer());
             }
         }
