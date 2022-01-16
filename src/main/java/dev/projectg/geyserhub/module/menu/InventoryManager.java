@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Predicate;
@@ -61,6 +62,21 @@ public class InventoryManager implements Listener {
             AccessItem accessItem = accessItemRegistry.getAccessItem(item);
             if (accessItem != null) {
                 event.setCancelled(!accessItem.allowMove);
+            }
+        }
+    }
+
+    @EventHandler
+    public void PlayerSwapHandItemsEvent(PlayerSwapHandItemsEvent event) {
+        if (!accessItemRegistry.isEnabled()) {
+            return;
+        }
+
+        ItemStack item = event.getOffHandItem();
+        if (item != null) {
+            AccessItem access = accessItemRegistry.getAccessItem(item);
+            if (access != null) {
+                event.setCancelled(true);
             }
         }
     }

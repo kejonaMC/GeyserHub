@@ -15,6 +15,10 @@ public class PlaceholderUtils {
     static {
         SelectorLogger.getLogger().debug("Initializing PlaceholderUtils");
         usePlaceholders = Bukkit.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI");
+
+        if (usePlaceholders && !PlaceholderAPI.isRegistered("player")) {
+            SelectorLogger.getLogger().warn("PlaceholderAPI is installed but the Player extension is not installed! %player_name% and %player_uuid% will NOT be resolved. Please install the Player extension.");
+        }
     }
 
     /**
