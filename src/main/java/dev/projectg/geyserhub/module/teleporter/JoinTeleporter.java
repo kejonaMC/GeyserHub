@@ -91,11 +91,11 @@ public class JoinTeleporter implements Listener, Reloadable {
                 return false;
             }
 
-            int x = section.getInt("X");
-            int y = section.getInt("Y");
-            int z = section.getInt("Z");
-            int yaw = section.getInt("Yaw");
-            int pitch = section.getInt("Pitch");
+            double x = section.getDouble("X");
+            double y = section.getDouble("Y");
+            double z = section.getDouble("Z");
+            float yaw = (float) section.getDouble("Yaw");
+            float pitch = (float) section.getDouble("Pitch");
             location = new Location(world, x, y, z, yaw, pitch);
             logger.debug("Join-Teleporter is enabled and has coordinates: [" + x + ", " + y + ", " + z + "] with Pitch and Yaw [" + pitch + ", " + yaw + "] in [" + worldName + "].");
 
