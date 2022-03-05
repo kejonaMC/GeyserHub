@@ -6,6 +6,7 @@
 
 
 # GeyserHub
+**Note: This plugin has been superseded by [CrossplatForms](https://github.com/ProjectG-Plugins/CrossplatForms). GeyserHub will eventually be stripped of its form, menu, and access item capabilities.**
 
 A crossplay lobby plugin for Spigot servers that provides server selector and command menus through Bedrock forms for Bedrock players, and inventory menus for Java players, with high customizability. Supports BungeeCord, and Velocity if BungeeCord plugin messaging is enabled in `velocity.toml`.
 
