@@ -1,6 +1,5 @@
-package dev.projectg.geyserhub.module.scoreboard;
+package dev.projectg.geyserhub;
 
-import dev.projectg.geyserhub.GeyserHubMain;
 import dev.projectg.geyserhub.config.ConfigId;
 import dev.projectg.geyserhub.utils.PlaceholderUtils;
 import org.bukkit.Bukkit;
@@ -14,7 +13,7 @@ import java.util.Objects;
 
 public class ScoreboardManager {
 
-    public static final int REFRESH_RATE = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN).getInt("Scoreboard.Refresh-rate");
+    public static final int REFRESH_RATE = GeyserHub.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN).getInt("Scoreboard.Refresh-rate");
 
     public static void addScoreboard() {
 
@@ -24,7 +23,7 @@ public class ScoreboardManager {
     }
 
     public static void createScoreboard(Player player) {
-        FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
+        FileConfiguration config = GeyserHub.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
         Scoreboard board = Objects.requireNonNull(Bukkit.getServer().getScoreboardManager()).getNewScoreboard();
         Objective objective = board.registerNewObjective("GeyserHub", "dummy", PlaceholderUtils.setPlaceholders(player, config.getString("Scoreboard.Title", "GeyserHub")));
 

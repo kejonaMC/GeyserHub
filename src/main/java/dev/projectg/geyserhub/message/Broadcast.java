@@ -1,11 +1,10 @@
-package dev.projectg.geyserhub.module.message;
+package dev.projectg.geyserhub.message;
 
-import dev.projectg.geyserhub.GeyserHubMain;
-import dev.projectg.geyserhub.SelectorLogger;
+import dev.projectg.geyserhub.GeyserHub;
+import dev.projectg.geyserhub.Logger;
 import dev.projectg.geyserhub.config.ConfigId;
 import dev.projectg.geyserhub.utils.PlaceholderUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -15,13 +14,13 @@ import java.util.*;
 
 public class Broadcast {
     public static void startBroadcastTimer(BukkitScheduler scheduler) {
-        FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
-        scheduler.scheduleSyncDelayedTask(GeyserHubMain.getInstance(), () -> {
+        FileConfiguration config = GeyserHub.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
+        scheduler.scheduleSyncDelayedTask(GeyserHub.getInstance(), () -> {
 
             if (config.getBoolean("Broadcasts.Enable", false)) {
                 ConfigurationSection parentSection = config.getConfigurationSection("Broadcasts.Messages");
                 if (parentSection == null) {
-                    SelectorLogger.getLogger().severe("Broadcasts.Messages configuration section is malformed, unable to send.");
+                    Logger.getLogger().severe("Broadcasts.Messages configuration section is malformed, unable to send.");
                     return;
                 }
 
@@ -34,7 +33,7 @@ public class Broadcast {
                         }
                     }
                 } else {
-                    SelectorLogger.getLogger().severe("Broadcast with ID " + broadcastId + " has a malformed message list, unable to send.");
+                    Logger.getLogger().severe("Broadcast with ID " + broadcastId + " has a malformed message list, unable to send.");
                 }
             }
             startBroadcastTimer(scheduler);

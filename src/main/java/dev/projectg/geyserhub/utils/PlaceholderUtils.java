@@ -1,6 +1,6 @@
 package dev.projectg.geyserhub.utils;
 
-import dev.projectg.geyserhub.SelectorLogger;
+import dev.projectg.geyserhub.Logger;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -9,15 +9,15 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaceholderUtils {
+public final class PlaceholderUtils {
 
     private static final boolean usePlaceholders;
     static {
-        SelectorLogger.getLogger().debug("Initializing PlaceholderUtils");
+        Logger.getLogger().debug("Initializing PlaceholderUtils");
         usePlaceholders = Bukkit.getServer().getPluginManager().isPluginEnabled("PlaceholderAPI");
 
         if (usePlaceholders && !PlaceholderAPI.isRegistered("player")) {
-            SelectorLogger.getLogger().warn("PlaceholderAPI is installed but the Player extension is not installed! %player_name% and %player_uuid% will NOT be resolved. Please install the Player extension.");
+            Logger.getLogger().warn("PlaceholderAPI is installed but the Player extension is not installed! %player_name% and %player_uuid% will NOT be resolved. Please install the Player extension.");
         }
     }
 
@@ -47,5 +47,9 @@ public class PlaceholderUtils {
             processedText.add(setPlaceholders(player, line));
         }
         return processedText;
+    }
+
+    private PlaceholderUtils() {
+
     }
 }

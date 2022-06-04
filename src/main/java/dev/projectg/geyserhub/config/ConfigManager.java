@@ -1,10 +1,9 @@
 package dev.projectg.geyserhub.config;
 
-import dev.projectg.geyserhub.GeyserHubMain;
-import dev.projectg.geyserhub.SelectorLogger;
+import dev.projectg.geyserhub.GeyserHub;
+import dev.projectg.geyserhub.Logger;
 import dev.projectg.geyserhub.config.updaters.MAIN_4;
 import dev.projectg.geyserhub.config.updaters.MAIN_5;
-import dev.projectg.geyserhub.config.updaters.SELECTOR_1;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -27,13 +26,12 @@ public class ConfigManager {
         mainUpdaters.put(4, MAIN_4.class);
         mainUpdaters.put(5, MAIN_5.class);
 
-        updaters.put(ConfigId.SELECTOR, Collections.singletonMap(1, SELECTOR_1.class));
         updaters.put(ConfigId.MAIN, mainUpdaters);
     }
 
     private final Map<ConfigId, FileConfiguration> configurations = new HashMap<>();
 
-    private final SelectorLogger logger;
+    private final Logger logger;
 
     public ConfigManager() {
         if (CONFIG_MANAGER == null) {
@@ -42,7 +40,7 @@ public class ConfigManager {
             throw new UnsupportedOperationException("Only one instance of ConfigManager is allowed!");
         }
 
-        this.logger = SelectorLogger.getLogger();
+        this.logger = Logger.getLogger();
     }
 
     /**
@@ -66,7 +64,7 @@ public class ConfigManager {
      * @return The success state
      */
     public boolean loadConfig(@Nonnull ConfigId config) {
-        GeyserHubMain plugin = GeyserHubMain.getInstance();
+        GeyserHub plugin = GeyserHub.getInstance();
 
         // Get the file
         File file = new File(plugin.getDataFolder(), config.fileName);

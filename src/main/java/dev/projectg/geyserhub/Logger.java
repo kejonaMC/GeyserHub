@@ -3,18 +3,18 @@ package dev.projectg.geyserhub;
 import dev.projectg.geyserhub.reloadable.Reloadable;
 import dev.projectg.geyserhub.reloadable.ReloadableRegistry;
 
-public class SelectorLogger implements Reloadable {
+public class Logger implements Reloadable {
 
-    private static final SelectorLogger LOGGER = new SelectorLogger(GeyserHubMain.getInstance());
+    private static final Logger LOGGER = new Logger(GeyserHub.getInstance());
 
-    private final GeyserHubMain plugin;
+    private final GeyserHub plugin;
     private boolean debug;
 
-    public static SelectorLogger getLogger() {
+    public static Logger getLogger() {
         return LOGGER;
     }
 
-    private SelectorLogger(GeyserHubMain plugin) {
+    private Logger(GeyserHub plugin) {
         this.plugin = plugin;
         debug = plugin.getConfig().getBoolean("Enable-Debug", false);
         ReloadableRegistry.registerReloadable(this);

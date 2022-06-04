@@ -1,6 +1,6 @@
-package dev.projectg.geyserhub.module.message;
+package dev.projectg.geyserhub.message;
 
-import dev.projectg.geyserhub.GeyserHubMain;
+import dev.projectg.geyserhub.GeyserHub;
 import dev.projectg.geyserhub.config.ConfigId;
 import dev.projectg.geyserhub.utils.PlaceholderUtils;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,7 +15,7 @@ public class MessageJoin implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
+        FileConfiguration config = GeyserHub.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
         Player player = e.getPlayer();
         List<String> messages = config.getStringList("Join-Message.Messages");
 

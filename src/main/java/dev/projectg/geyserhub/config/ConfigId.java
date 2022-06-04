@@ -4,8 +4,7 @@ package dev.projectg.geyserhub.config;
  * An enum containing the identities of all valid configuration files.
  */
 public enum ConfigId {
-    MAIN("config.yml", 6),
-    SELECTOR("selector.yml", 2);
+    MAIN("config.yml", 6);
 
     public static final ConfigId[] VALUES = values();
 

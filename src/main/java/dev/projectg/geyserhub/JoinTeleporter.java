@@ -1,10 +1,8 @@
-package dev.projectg.geyserhub.module.teleporter;
+package dev.projectg.geyserhub;
 
-import dev.projectg.geyserhub.GeyserHubMain;
 import dev.projectg.geyserhub.config.ConfigId;
 import dev.projectg.geyserhub.reloadable.Reloadable;
 import dev.projectg.geyserhub.reloadable.ReloadableRegistry;
-import dev.projectg.geyserhub.SelectorLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -26,7 +24,7 @@ public class JoinTeleporter implements Listener, Reloadable {
     private Location location;
 
     public JoinTeleporter() {
-        FileConfiguration config = GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
+        FileConfiguration config = GeyserHub.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN);
         ReloadableRegistry.registerReloadable(this);
         enabled = load(config);
     }
@@ -44,7 +42,7 @@ public class JoinTeleporter implements Listener, Reloadable {
      * @return false if there was an error loading or if its disabled in the config
      */
     private boolean load(@Nonnull FileConfiguration config) {
-        SelectorLogger logger = SelectorLogger.getLogger();
+        Logger logger = Logger.getLogger();
 
         if (!config.contains("Join-Teleporter", true) || !config.isConfigurationSection("Join-Teleporter")) {
             logger.warn("Configuration does not contain Join-Teleporter section, skipping module.");
@@ -71,7 +69,7 @@ public class JoinTeleporter implements Listener, Reloadable {
      * @return false if there was an error setting the location
      */
     private boolean setLocation(@Nonnull ConfigurationSection section) {
-        SelectorLogger logger = SelectorLogger.getLogger();
+        Logger logger = Logger.getLogger();
 
         if (!(section.contains("World", true) && section.isString("World"))) {
             logger.severe("Join-Teleporter config section does not contain a valid World string, skipping module!");
@@ -108,7 +106,7 @@ public class JoinTeleporter implements Listener, Reloadable {
 
     @Override
     public boolean reload() {
-        enabled = load(GeyserHubMain.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN));
+        enabled = load(GeyserHub.getInstance().getConfigManager().getFileConfiguration(ConfigId.MAIN));
         return true;
     }
 }
