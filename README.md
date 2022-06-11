@@ -1,12 +1,12 @@
-[![Build Status](https://ci.projectg.dev/job/GeyserHub/job/master/badge/icon)](https://ci.projectg.dev/job/GeyserHub/job/master/)
+[![Build Status](https://ci.kejona.dev/job/GeyserHub/job/master/badge/icon)](https://ci.kejona.dev/job/GeyserHub/job/master/)
 [![Spigot page downloads](https://img.shields.io/spiget/downloads/95455?color=yellow&label=Spigot%20page%20downloads)](https://www.spigotmc.org/resources/geyserhub.95455/)
 [![bStats Spigot](https://img.shields.io/bstats/servers/13469?color=yellow&label=Spigot%20servers)](https://bstats.org/plugin/bukkit/GeyserHub/13469)
 [![Discord](https://img.shields.io/discord/853331530004299807?color=7289da&label=discord&logo=discord&logoColor=white)](https://discord.gg/M2SvqCu4e9)
-[![License](https://img.shields.io/badge/License-GPL-orange)](https://github.com/ProjectG-Plugins/GeyserUpdater/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-GPL-orange)](https://github.com/kejonaMC/GeyserUpdater/blob/master/LICENSE)
 
 
 # GeyserHub
-**Note: This plugin has been superseded by [CrossplatForms](https://github.com/ProjectG-Plugins/CrossplatForms). GeyserHub will eventually be stripped of its form, menu, and access item capabilities.**
+**Note: This plugin has been superseded by [CrossplatForms](https://github.com/kejonaMC/CrossplatForms). GeyserHub will eventually be stripped of its form, menu, and access item capabilities.**
 
 A crossplay lobby plugin for Spigot servers that provides server selector and command menus through Bedrock forms for Bedrock players, and inventory menus for Java players, with high customizability. Supports BungeeCord, and Velocity if BungeeCord plugin messaging is enabled in `velocity.toml`.
 
@@ -20,7 +20,7 @@ Anything can be toggled off.
 - Automatic broadcasts
 - World restrictions
 
- The legacy simple ServerSelector only for Geyser players can be found [here](https://ci.projectg.dev/job/GeyserHub/job/legacy-selector/).
+ The legacy simple ServerSelector only for Geyser players can be found [here](https://ci.kejona.dev/job/GeyserHub/job/legacy-selector/).
 ###### Note: This is NOT an official GeyserMC plugin. It is made to work with Geyser, but it is not maintained or produced by GeyserMC. If you need support with this plugin, please do not ask the Geyser developers — instead, please go to our Discord server which is linked above.
 
 ## Installation
@@ -48,7 +48,7 @@ See this [guide](https://github.com/GeyserMC/Floodgate/wiki/Setup-and-Usage#inst
 
 ## Configuration
 
-See the documentation for our config [here](https://github.com/ProjectG-Plugins/GeyserHub/wiki/Configuration-Docs).
+See the documentation for our config [here](https://github.com/kejonaMC/GeyserHub/wiki/Configuration-Docs).
 
 ## Creators
 Jens & Konicai
