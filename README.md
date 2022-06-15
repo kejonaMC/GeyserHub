@@ -1,4 +1,4 @@
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/kejonaMC/GeyserHub?label=download)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/kejonaMC/GeyserHub?label=download)](https://github.com/kejonaMC/GeyserHub/releases)
 [![Spigot page downloads](https://img.shields.io/spiget/downloads/95455?color=yellow&label=Spigot%20page%20downloads)](https://www.spigotmc.org/resources/geyserhub.95455/)
 [![bStats Spigot](https://img.shields.io/bstats/servers/13469?color=yellow&label=Spigot%20servers)](https://bstats.org/plugin/bukkit/GeyserHub/13469)
 [![Discord](https://img.shields.io/discord/853331530004299807?color=7289da&label=discord&logo=discord&logoColor=white)](https://discord.gg/M2SvqCu4e9)
