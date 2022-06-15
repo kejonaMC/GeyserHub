@@ -1,11 +1,11 @@
-[![Build Status](https://ci.projectg.dev/job/GeyserHub/job/master/badge/icon)](https://ci.projectg.dev/job/GeyserHub/job/master/)
+[![Build Status](https://ci.kejona.dev/job/GeyserHub/job/master/badge/icon)](https://ci.kejona.dev/job/GeyserHub/job/master/)
 [![Spigot page downloads](https://img.shields.io/spiget/downloads/95455?color=yellow&label=Spigot%20page%20downloads)](https://www.spigotmc.org/resources/geyserhub.95455/)
 [![bStats Spigot](https://img.shields.io/bstats/servers/13469?color=yellow&label=Spigot%20servers)](https://bstats.org/plugin/bukkit/GeyserHub/13469)
 [![Discord](https://img.shields.io/discord/853331530004299807?color=7289da&label=discord&logo=discord&logoColor=white)](https://discord.gg/M2SvqCu4e9)
-[![License](https://img.shields.io/badge/License-GPL-orange)](https://github.com/ProjectG-Plugins/GeyserUpdater/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-GPL-orange)](https://github.com/kejonaMC/GeyserUpdater/blob/master/LICENSE)
 
 # GeyserHub
-**Note: This plugin has been superseded by [CrossplatForms](https://github.com/ProjectG-Plugins/CrossplatForms). GeyserHub no longer has form, menu, and access item capabilities.**
+**Note: This plugin has been superseded by [CrossplatForms](https://github.com/kejonaMC/CrossplatForms). GeyserHub no longer has form, menu, and access item capabilities.**
 
 GeyserHub now only provides server/hub capabilities.
 
@@ -36,7 +36,7 @@ Anything can be toggled off.
 
 ## Configuration
 
-See the documentation for our config [here](https://github.com/ProjectG-Plugins/GeyserHub/wiki/Configuration-Docs).
+See the documentation for our config [here](https://github.com/kejonaMC/GeyserHub/wiki/Configuration-Docs).
 
 ## Creators
 Jens & Konicai
