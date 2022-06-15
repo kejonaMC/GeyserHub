@@ -1,4 +1,4 @@
-[![Build Status](https://ci.kejona.dev/job/GeyserHub/job/master/badge/icon)](https://ci.kejona.dev/job/GeyserHub/job/master/)
+[![Build Status](https://github.com/kejonaMC/GeyserHub/actions/workflows/maven.yml/badge.svg)](https://ci.kejona.dev/job/GeyserHub/job/master/)
 [![Spigot page downloads](https://img.shields.io/spiget/downloads/95455?color=yellow&label=Spigot%20page%20downloads)](https://www.spigotmc.org/resources/geyserhub.95455/)
 [![bStats Spigot](https://img.shields.io/bstats/servers/13469?color=yellow&label=Spigot%20servers)](https://bstats.org/plugin/bukkit/GeyserHub/13469)
 [![Discord](https://img.shields.io/discord/853331530004299807?color=7289da&label=discord&logo=discord&logoColor=white)](https://discord.gg/M2SvqCu4e9)
