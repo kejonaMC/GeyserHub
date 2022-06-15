@@ -5,17 +5,14 @@
 [![License](https://img.shields.io/badge/License-GPL-orange)](https://github.com/kejonaMC/GeyserUpdater/blob/master/LICENSE)
 
 # GeyserHub
-**Note: This plugin has been superseded by [CrossplatForms](https://github.com/kejonaMC/CrossplatForms). GeyserHub no longer has form, menu, and access item capabilities.**
+#### Note: This plugin has been superseded by [CrossplatForms](https://github.com/kejonaMC/CrossplatForms). GeyserHub no longer has form, menu, and access item capabilities. Place your selector.yml in the config folder of CrossplatForms for it to be automatically converted.
 
-GeyserHub now only provides server/hub capabilities.
-
-### Other Features:
+### Features:
 Anything can be toggled off.
 - Simple scoreboard
 - Welcome messages
 - Automatic broadcasts
 - World restrictions
-- Full Placeholder API support
 
 ###### Note: This is NOT an official GeyserMC plugin, it is not maintained or produced by GeyserMC. If you need support with this plugin, please do not ask the Geyser developers — instead, please go to our Discord server which is linked above.
 

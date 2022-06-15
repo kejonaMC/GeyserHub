@@ -22,10 +22,7 @@ public class GeyserHubCommand implements CommandExecutor {
             Logger.Level.SEVERE, ChatColor.RED);
 
     private static final String[] HELP = {
-            "/ghub - Opens the default form if one exists. If not, shows the help page",
-            "/ghub - Opens the help page",
-            "/ghub form <form> - Open a form with the defined name",
-            "/ghub form <form> <player> - Sends a form to a given player",
+            "/ghub help - Opens the help page",
             "/ghub reload - reloads the selector"
     };
 
@@ -37,7 +34,7 @@ public class GeyserHubCommand implements CommandExecutor {
         if (!(commandSender instanceof Player || commandSender instanceof ConsoleCommandSender)) {
             return false;
         }
-        // todo: cleanup
+
         if (args.length == 0) {
             sendHelp(commandSender);
             return true;

@@ -24,6 +24,10 @@ public class GeyserHub extends JavaPlugin {
         // getting the logger forces the config to load before our loadConfiguration() is called...
         Logger logger = Logger.getLogger();
 
+        logger.warn("THIS PLUGIN HAS BEEN SUPERSEDED BY CROSSPLATFORMS: https://github.com/kejonaMC/CrossplatForms");
+        logger.warn("FORM, MENU, AND ITEM FEATURES ARE NO LONGER PRESENT IN GEYSERHUB");
+        logger.warn("Place your selector.yml in the config folder of CrossplatForms for it to be automatically converted.");
+
         try {
             Properties gitProperties = new Properties();
             gitProperties.load(FileUtils.getResource("git.properties"));
